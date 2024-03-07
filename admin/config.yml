@@ -1,9 +1,9 @@
 backend:
   name: git-gateway
-  branch: main
   accept_roles:
     - admin
     - editor
+  branch: main
 media_folder: theme/assets/images
 public_folder: /assets/images
 collections:
@@ -14,10 +14,10 @@ collections:
     create: false
     delete: false
     slug: '{{slug}}'
-    editor:
+    editor: &ref_0
       preview: false
     folder: cms/pages
-    fields:
+    fields: &ref_1
       - label: Title
         name: title
         widget: string
@@ -28,7 +28,8 @@ collections:
         widget: hidden
         name: layout
         default: '{{slug}}.html'
-      - label: Seo
+      - &ref_2
+        label: Seo
         name: seo
         widget: object
         collapsed: true
@@ -75,10 +76,169 @@ collections:
             name: twitter:creator
             widget: string
             required: false
+          - label: Twitter Image
+            name: twitter:image
+            widget: image
+            required: false
+            media_library:
+              config:
+                multiple: false
           - label: Additional HTML tags
             name: additional_tags
             widget: text
             required: false
+  - name: pages-modules
+    label: Pages modules
+    identifier_field: title
+    extension: md
+    create: false
+    delete: false
+    slug: '{{slug}}'
+    editor: *ref_0
+    folder: cms/pages/modules
+    fields: *ref_1
+  - name: legal
+    label: Legals
+    folder: cms/legal
+    create: true
+    identifier_field: name
+    extension: md
+    slug: '{{slug}}'
+    fields:
+      - hint: ''
+        name: title
+        label: Name
+        widget: string
+        required: true
+      - hint: ''
+        name: created-on
+        label: Created On
+        widget: datetime
+        required: false
+      - hint: ''
+        name: updated-on
+        label: Updated On
+        widget: datetime
+        required: false
+      - hint: ''
+        name: published-on
+        label: Published On
+        widget: datetime
+        required: false
+      - label: Description
+        name: body
+        widget: markdown
+        required: false
+      - label: Tags
+        widget: hidden
+        name: tags
+        default: legal
+      - label: Layout
+        widget: hidden
+        name: layout
+        default: '[legal].html'
+      - label: Publish Date
+        name: date
+        widget: datetime
+      - *ref_2
+  - name: faqs
+    label: FAQs
+    folder: cms/faqs
+    create: true
+    identifier_field: name
+    extension: md
+    slug: '{{slug}}'
+    fields:
+      - hint: A short question to be answered
+        name: title
+        label: Question
+        widget: string
+        required: true
+      - hint: ''
+        name: created-on
+        label: Created On
+        widget: datetime
+        required: false
+      - hint: ''
+        name: updated-on
+        label: Updated On
+        widget: datetime
+        required: false
+      - hint: ''
+        name: published-on
+        label: Published On
+        widget: datetime
+        required: false
+      - label: Answer
+        name: body
+        widget: markdown
+        required: false
+      - hint: 'Number should follow ideally this format: 01, 02, 03, etc...'
+        name: f_number
+        label: Number
+        widget: string
+        required: false
+      - label: Tags
+        widget: hidden
+        name: tags
+        default: faqs
+      - label: Layout
+        widget: hidden
+        name: layout
+        default: '[faqs].html'
+      - label: Publish Date
+        name: date
+        widget: datetime
+      - *ref_2
+  - name: highlights
+    label: Highlights
+    folder: cms/highlights
+    create: true
+    identifier_field: name
+    extension: md
+    slug: '{{slug}}'
+    fields:
+      - hint: Headline of the highlight, ideally as concise as possible.
+        name: title
+        label: Headline
+        widget: string
+        required: true
+      - hint: ''
+        name: created-on
+        label: Created On
+        widget: datetime
+        required: false
+      - hint: ''
+        name: updated-on
+        label: Updated On
+        widget: datetime
+        required: false
+      - hint: ''
+        name: published-on
+        label: Published On
+        widget: datetime
+        required: false
+      - label: Description
+        name: body
+        widget: markdown
+        required: false
+      - hint: 'Must be ideally in this format: 01, 02, 03, etc...'
+        name: f_number
+        label: Number
+        widget: string
+        required: false
+      - label: Tags
+        widget: hidden
+        name: tags
+        default: highlights
+      - label: Layout
+        widget: hidden
+        name: layout
+        default: '[highlights].html'
+      - label: Publish Date
+        name: date
+        widget: datetime
+      - *ref_2
   - label: Theme Settings
     name: settings
     identifier_field: title
@@ -169,9 +329,217 @@ collections:
             name: title
             widget: hidden
             default: Texts
+          - hint: 'Original text: FAQ, key: 10ef6'
+            label: Text
+            name: 10ef6
+            widget: string
+          - hint: 'Original text: new, key: 1a9a0'
+            label: Text
+            name: 1a9a0
+            widget: string
+          - hint: 'Original text: Get an edge, key: -5f8cfd1a'
+            label: Text
+            name: '-5f8cfd1a'
+            widget: string
+          - hint: >-
+              Original text: We maintain composure amidst extremely volatile
+              environements., key: -4918964
+            label: Text
+            name: '-4918964'
+            widget: string
+          - hint: 'Original text: Highlights, key: -73e219a1'
+            label: Text
+            name: '-73e219a1'
+            widget: string
+          - hint: >-
+              Original text: The rapid evolution of the fintech industry is
+              revolutionizing the way we handle financial investments., key:
+              -100d2eea
+            label: Text
+            name: '-100d2eea'
+            widget: text
+          - hint: >-
+              Original text: Navigating Unpredictable Market Conditions, key:
+              -7c4bae3c
+            label: Text
+            name: '-7c4bae3c'
+            widget: string
+          - hint: >-
+              Original text: Where Steadfast Stability Meets The Turbulence Of
+              Markets, key: -737af915
+            label: Text
+            name: '-737af915'
+            widget: string
+          - hint: 'Original text: No items found., key: 3d503d2b'
+            label: Text
+            name: 3d503d2b
+            widget: string
+          - hint: >-
+              Original text: Where steadfast stability meets the turbulence of
+              dynamic markets., key: -40ca73c
+            label: Text
+            name: '-40ca73c'
+            widget: string
+          - hint: 'Original text: © , key: 1497'
+            label: Text
+            name: '1497'
+            widget: string
+          - hint: 'Original text: XXXX, key: 295600'
+            label: Text
+            name: '295600'
+            widget: string
+          - hint: 'Original text:  Mountain Ocean SA, key: -78d7833d'
+            label: Text
+            name: '-78d7833d'
+            widget: string
+          - hint: >-
+              Original text: The rapid evolution of the fintech industry is
+              revolutionizing the way we handle financial transactions., key:
+              1f3cc591
+            label: Text
+            name: 1f3cc591
+            widget: text
+          - hint: 'Original text: Imprint, key: -29f92c17'
+            label: Text
+            name: '-29f92c17'
+            widget: string
+          - hint: 'Original text: Privacy Notice, key: -4323f550'
+            label: Text
+            name: '-4323f550'
+            widget: string
           - hint: 'Original text: Coming soon, key: cdb031a'
             label: Text
             name: cdb031a
+            widget: string
+          - hint: 'Original text: Work in progress, key: 30b03459'
+            label: Text
+            name: 30b03459
+            widget: string
+          - hint: 'Original text: © 2024 Mountain Ocean SA, key: -2e98d4e6'
+            label: Text
+            name: '-2e98d4e6'
+            widget: string
+          - hint: >-
+              Original text: navigating unpredictable market conditions with
+              finesse and adaptability, key: 501c61a4
+            label: Text
+            name: 501c61a4
+            widget: string
+          - hint: >-
+              Original text: where steadfast stability meets the turbulence of
+              dynamic markets, key: -717cc336
+            label: Text
+            name: '-717cc336'
+            widget: string
+          - hint: 'Original text: 01, key: 601'
+            label: Text
+            name: '601'
+            widget: string
+          - hint: >-
+              Original text: Lorem ipsum dolor sit amet, consectetur adipiscing
+              elit, lorem ipsum dolor sit amet., key: 1bd0201e
+            label: Text
+            name: 1bd0201e
+            widget: string
+          - hint: >-
+              Original text: Lorem ipsum dolor sit amet, consectetur adipiscing
+              elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+              aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+              laboris nisi. Lorem ipsum dolor sit amet, consectetur adipiscing
+              elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+              aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+              laboris nisi.Lorem ipsum dolor sit amet, consectetur adipiscing
+              elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+              aliqua. Ut enim ad minim veniam, quis nostrud., key: -68e891f6
+            label: Text
+            name: '-68e891f6'
+            widget: text
+          - hint: 'Original text: Lorem ipsum dolor sit amet., key: 9558e10'
+            label: Text
+            name: '9558e10'
+            widget: string
+          - hint: 'Original text: 02, key: 602'
+            label: Text
+            name: '602'
+            widget: string
+          - hint: >-
+              Original text: Lorem ipsum dolor sit amet, consectetur adipiscing
+              elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+              aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+              laboris nisi.Lorem ipsum dolor sit amet, consectetur adipiscing
+              elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+              aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+              laboris nisi., key: -23c6c6f2
+            label: Text
+            name: '-23c6c6f2'
+            widget: text
+          - hint: >-
+              Original text: Lorem ipsum dolor sit amet, consectetur adipiscing
+              elit, lorem ipsum. Lorem ipsum dolor sit amet, consectetur
+              adipiscing elit, lorem ipsum., key: 31d895aa
+            label: Text
+            name: 31d895aa
+            widget: text
+          - hint: 'Original text: 03, key: 603'
+            label: Text
+            name: '603'
+            widget: string
+          - hint: >-
+              Original text: Lorem ipsum dolor sit amet, consectetur adipiscing
+              elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+              aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+              laboris nisi. Lorem ipsum dolor sit amet, consectetur adipiscing
+              elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+              aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+              laboris nisi., key: 5bd4ec80
+            label: Text
+            name: 5bd4ec80
+            widget: text
+          - hint: 'Original text: Protected page, key: -11c6301f'
+            label: Text
+            name: '-11c6301f'
+            widget: string
+          - hint: >-
+              Original text: Incorrect password. Please try again., key:
+              -f5c4b5f
+            label: Text
+            name: '-f5c4b5f'
+            widget: string
+          - hint: 'Original text: scroll 100VH, key: 7922fd50'
+            label: Text
+            name: 7922fd50
+            widget: string
+      - label: Links
+        name: links
+        file: cms/_data/links.json
+        fields:
+          - label: Title
+            name: title
+            widget: hidden
+            default: Links
+          - hint: 'Original link: /lp/, key: 17009c'
+            label: Link
+            name: 17009c
+            widget: string
+          - hint: 'Original link: #faq, key: 117413'
+            label: Link
+            name: '117413'
+            widget: string
+          - hint: 'Original link: #, key: 23'
+            label: Link
+            name: '23'
+            widget: string
+          - hint: 'Original link: #highlights, key: 70907aa2'
+            label: Link
+            name: 70907aa2
+            widget: string
+          - hint: 'Original link: /imprint/, key: 1f89a675'
+            label: Link
+            name: 1f89a675
+            widget: string
+          - hint: 'Original link: /privacy-notice/, key: 6710ff03'
+            label: Link
+            name: 6710ff03
             widget: string
       - label: Images
         name: images
@@ -182,7 +550,7 @@ collections:
             widget: hidden
             default: Images
           - label: Image
-            name: 2b11013c
+            name: 74095e9e
             widget: object
             fields:
               - name: url
@@ -195,7 +563,46 @@ collections:
                 widget: string
                 required: false
           - label: Image
-            name: '32961258'
+            name: 2a6ba251
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-57b4a975'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 57d26d07
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-27ea72fd'
             widget: object
             fields:
               - name: url
