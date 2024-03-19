@@ -509,6 +509,18 @@ collections:
             label: Text
             name: 7922fd50
             widget: string
+          - hint: 'Original text: 404, key: c938'
+            label: Text
+            name: c938
+            widget: string
+          - hint: 'Original text: This page has been moved., key: -5f0ce5a6'
+            label: Text
+            name: '-5f0ce5a6'
+            widget: string
+          - hint: 'Original text: Please, contact your admin., key: -7a910872'
+            label: Text
+            name: '-7a910872'
+            widget: string
       - label: Links
         name: links
         file: cms/_data/links.json

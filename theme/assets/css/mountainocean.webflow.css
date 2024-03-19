@@ -227,15 +227,6 @@ p {
   padding-right: 4px;
 }
 
-.one-item-link {
-  width: 33.3333%;
-  flex-flow: wrap;
-  justify-content: center;
-  align-items: center;
-  padding-right: 10px;
-  display: flex;
-}
-
 .faq__item {
   border-bottom: 1px solid rgba(27, 61, 72, .15);
   position: relative;
@@ -802,6 +793,11 @@ p {
   align-items: center;
   display: flex;
   position: relative;
+}
+
+.text-block-4 {
+  text-align: center;
+  line-height: 1.4;
 }
 
 @media screen and (max-width: 991px) {

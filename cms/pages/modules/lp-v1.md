@@ -1,7 +1,7 @@
 ---
 title: LP header v1
-permalink: '{{ page.fileSlug }}/index.html'
-layout: lp-v1.html
+permalink: modules/{{ page.fileSlug }}/index.html
+layout: modules/lp-v1.html
 slug: lp-v1
 tags: pages
 seo:

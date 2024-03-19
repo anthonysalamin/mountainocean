@@ -3,10 +3,10 @@ f_number: '03'
 title: >-
   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed lorem ipsum dolor
   ?
-slug: lorem-ipsum-dolor-sit-amet-consectetur-adipiscing-elit-sed-lorem-ipsum-dolor
-updated-on: '2024-01-17T06:54:14.883Z'
+slug: question-1
+updated-on: '2024-03-19T03:19:18.419Z'
 created-on: '2024-01-17T06:23:11.377Z'
-published-on: '2024-01-17T06:57:12.427Z'
+published-on: '2024-03-19T03:20:10.087Z'
 layout: '[faqs].html'
 tags: faqs
 ---

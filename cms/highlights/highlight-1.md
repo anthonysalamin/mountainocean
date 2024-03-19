@@ -3,11 +3,10 @@ f_number: '03'
 title: >-
   Lorem ipsum dolor sit amet, consectetur adipiscing elit, lorem ipsum. Lorem
   ipsum dolor sit amet, consectetur adipiscing elit, lorem ipsum.
-slug: >-
-  lorem-ipsum-dolor-sit-amet-consectetur-adipiscing-elit-lorem-ipsum-lorem-ipsum-dolor-sit-amet-consectetur-adipiscing-elit-lorem-ipsum
-updated-on: '2024-01-17T06:20:01.608Z'
+slug: highlight-1
+updated-on: '2024-03-19T03:19:52.917Z'
 created-on: '2024-01-17T06:20:01.608Z'
-published-on: '2024-01-17T06:33:29.127Z'
+published-on: '2024-03-19T03:20:10.087Z'
 layout: '[highlights].html'
 tags: highlights
 ---

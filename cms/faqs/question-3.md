@@ -3,11 +3,10 @@ title: >-
   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed lorem ipsum
   dolor. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed lorem
   ipsum dolor ?
-slug: >-
-  lorem-ipsum-dolor-sit-amet-consectetur-adipiscing-elit-sed-lorem-ipsum-dolor-lorem-ipsum-dolor-sit-amet-consectetur-adipiscing-elit-sed-lorem-ipsum-dolor
-updated-on: '2024-01-17T06:54:32.029Z'
+slug: question-3
+updated-on: '2024-03-19T03:19:34.077Z'
 created-on: '2024-01-17T06:21:09.643Z'
-published-on: '2024-01-17T06:57:12.427Z'
+published-on: '2024-03-19T03:20:10.087Z'
 f_number: '01'
 layout: '[faqs].html'
 tags: faqs

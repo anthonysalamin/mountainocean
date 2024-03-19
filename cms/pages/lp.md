@@ -1,5 +1,5 @@
 ---
-title: LP header v2
+title: LP
 permalink: '{{ page.fileSlug }}/index.html'
 layout: lp.html
 slug: lp
