@@ -358,18 +358,6 @@ collections:
             label: Text
             name: '-100d2eea'
             widget: text
-          - hint: >-
-              Original text: Navigating Unpredictable Market Conditions, key:
-              -7c4bae3c
-            label: Text
-            name: '-7c4bae3c'
-            widget: string
-          - hint: >-
-              Original text: Where Steadfast Stability Meets The Turbulence Of
-              Markets, key: -737af915
-            label: Text
-            name: '-737af915'
-            widget: string
           - hint: 'Original text: No items found., key: 3d503d2b'
             label: Text
             name: 3d503d2b
@@ -418,6 +406,18 @@ collections:
           - hint: 'Original text: © 2024 Mountain Ocean SA, key: -2e98d4e6'
             label: Text
             name: '-2e98d4e6'
+            widget: string
+          - hint: >-
+              Original text: Navigating Unpredictable Market Conditions, key:
+              -7c4bae3c
+            label: Text
+            name: '-7c4bae3c'
+            widget: string
+          - hint: >-
+              Original text: Where Steadfast Stability Meets The Turbulence Of
+              Markets, key: -737af915
+            label: Text
+            name: '-737af915'
             widget: string
           - hint: >-
               Original text: navigating unpredictable market conditions with
